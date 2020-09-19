@@ -1,0 +1,34 @@
+<%= link_to("<< Back to List", books_path, :class => 'back-link') %>
+
+<div class="book delete">
+    <h2>Are You Sure?</h2>
+    <table class="single item" summary="Book details">
+        <tr class="header">
+            <th>Title</th>
+            <th>Author</th>
+            <th>Genre</th>
+            <th>Price</th>
+            <th>Published</th>
+            <th>Created</th>
+            <th>Updated</th>
+        </tr>
+        <tr>
+            <td><%= @book.title %></td>
+            <td><%= @book.author %></td>
+            <td><%= @book.genre %></td>
+            <td><%= @book.price %></td>
+            <td><%= @book.published %></td>
+            <td><%= @book.created_at %></td>
+            <td><%= @book.updated_at %></td>
+        </tr>
+    </table>
+
+    <%= form_for(@book, :method => 'delete') do |f| %>
+        <p>Are you sure you want to permanently delete this book?</p>
+        <div class="form-buttons">
+            <%= f.submit("Delete Book") %>
+        </div>
+    <% end %>
+</div>
+
+<!-- <p>Find me in app/views/books/delete.html.erb</p> -->
