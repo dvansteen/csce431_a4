@@ -1,0 +1,31 @@
+<%= link_to("<< Back to List", books_path, :class => 'back-link') %>
+
+<div class="book edit">
+    <h2>Edit Book</h2>
+    <%= form_for(@book) do |f| %>
+        <table summary="Book form fields">
+            <tr class="header">
+                <th>Title</th>
+                <th>Author</th>
+                <th>Genre</th>
+                <th>Price</th>
+                <th>Published</th>
+            </tr>
+            <tr>
+                <td><%= f.text_field(:title) %></td>
+                <td><%= f.text_field(:author) %></td>
+                <td><%= f.text_field(:genre) %></td>
+                <td><%= f.text_field(:price) %></td>
+                <td><%= f.text_field(:published) %></td>
+            </tr>
+        </table>
+
+        <div class="form-buttons">
+            <%= f.submit("Update Book") %>
+        </div>
+
+    <% end %>
+    
+</div>
+
+<!-- <p>Find me in app/views/books/edit.html.erb</p> -->
